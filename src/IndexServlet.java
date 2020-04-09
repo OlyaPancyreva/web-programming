@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 @WebServlet("/auth")
 public class IndexServlet extends HttpServlet {
@@ -18,11 +17,8 @@ public class IndexServlet extends HttpServlet {
             /*   добавляем пользователя в базу данных   */
             ConToDb.createUser(login, password);
             /*   Устанавливаем куки   */
-            response.addCookie(new Cookie("user", login));
-            response.sendRedirect("auth.jsp");
-            /*  и переходим на след страницу    */
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("auth.jsp");
-            requestDispatcher.forward(request, response);
+            response.addCookie(new Cookie("login", login));
+            response.sendRedirect("hello");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -30,7 +26,6 @@ public class IndexServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-        requestDispatcher.forward(request, response);
+        getServletContext().getRequestDispatcher("/auth.jsp").forward(request, response);
     }
 }
