@@ -17,17 +17,17 @@
 <body>
 <%
     String userName = null;
-    String cookieName = request.getParameter("login");
     Cookie[] cookies = request.getCookies();
     if (cookies != null) {
-        for (Cookie c : cookies) {
-            if (c.getName().equals(cookieName)) {
-                userName = c.getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("login")) {
+                userName = cookie.getValue();
             }
         }
     }
 %>
-<h1 class="txt">Привет, <%= userName%></h1>
+<h1 class="txt">Привет, <%=userName %>
+</h1>
 <br>
 <form action="hello" method="post">
     <button type="submit" value="Execute" class="btn btn-primary btn-t">Выход</button>
