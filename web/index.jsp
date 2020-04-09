@@ -30,7 +30,7 @@
         <label for="exampleInputPassword1">Пароль</label>
         <input name="password" type="password" class="form-control" id="exampleInputPassword1">
     </div>
-    <button type="submit" class="btn btn-primary btn-r" value="Execute">Вход</button>
+    <button type="submit" class="btn btn-primary btn-r" value="Login">Вход</button>
 
 </form>
 </body>
