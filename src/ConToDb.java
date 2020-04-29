@@ -26,4 +26,19 @@ public class ConToDb {
         statement.executeUpdate();
         con.close();
     }
+
+    public static byte[] getImage() throws SQLException {
+        Connection connection = getConnection();
+        PreparedStatement statement = connection.prepareStatement("Select * from images");
+        ResultSet resultSet = statement.executeQuery();
+        byte[] img = new byte[0];
+        while (resultSet.next()){
+            img = resultSet.getBytes("image");
+        }
+
+        resultSet.close();
+        statement.close();
+        return img;
+    }
+
 }
