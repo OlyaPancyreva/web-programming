@@ -10,12 +10,14 @@
         }
 
         .btn-t {
-            margin-left: 200px;
+            margin: 20px;
+            margin-left: 300px;
+
         }
 
         .my-file {
             margin: 10px;
-            margin-left: 200px;
+            margin-left: 100px;
         }
     </style>
 </head>
@@ -35,10 +37,10 @@
 </h1>
 <br>
 <form action="hello" method="post">
-    <input type="file" class="form-control-file my-file">
+    <img src="/ResponseImageServlet" class="btn-t"><br>
     <button type="submit" value="Execute" class="btn btn-primary btn-t">Выход</button>
 </form>
-<img src="/ResponseImageServlet" class="btn-t">
+
 <br>
 
 </body>
