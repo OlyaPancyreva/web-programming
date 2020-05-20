@@ -2,7 +2,7 @@ import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-@WebListener
+@WebListener()
 public class SessionListener implements HttpSessionListener {
     public void sessionCreated(HttpSessionEvent arg0){
         System.out.println("A new session is created");
