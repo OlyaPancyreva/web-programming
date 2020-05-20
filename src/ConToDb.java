@@ -1,3 +1,4 @@
+import java.io.InputStream;
 import java.sql.*;
 
 public class ConToDb {
@@ -25,20 +26,6 @@ public class ConToDb {
         statement.setString(2, password);
         statement.executeUpdate();
         con.close();
-    }
-
-    public static byte[] getImage() throws SQLException {
-        Connection connection = getConnection();
-        PreparedStatement statement = connection.prepareStatement("Select * from images");
-        ResultSet resultSet = statement.executeQuery();
-        byte[] img = new byte[0];
-        while (resultSet.next()){
-            img = resultSet.getBytes("image");
-        }
-
-        resultSet.close();
-        statement.close();
-        return img;
     }
 
 }
