@@ -17,7 +17,7 @@ public class ResponseImageServlet extends HttpServlet {
 
     private static class Imagination {
         private static BufferedImage drawGraphics() {
-            BufferedImage imgBuff = new BufferedImage(500, 400, BufferedImage.TYPE_INT_RGB);
+            BufferedImage imgBuff = new BufferedImage(300, 300, BufferedImage.TYPE_INT_RGB);
             Graphics2D g2 = imgBuff.createGraphics();
             GeneralPath path = new GeneralPath(GeneralPath.WIND_NON_ZERO);
             path.moveTo(0.0f,0.0f);
